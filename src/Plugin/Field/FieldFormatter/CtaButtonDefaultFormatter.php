@@ -20,14 +20,15 @@ use Drupal;
 
 class CtaBUttonDefaultFormatter extends FormatterBase {
    /**
-   * Define how the field type is showed.
+   * Define how the CTA Button field type is showed.
    *
    * Inside this method we can customize how the field is displayed inside
    * pages.
    */
 
-  // public function viewElements(FieldItemListInterface $items, $langcode) {
+  public function viewElements(FieldItemListInterface $items, $langcode) {
 
+  // // Don't use a template file but create render array directly
   //   $elements = [];
   //   foreach ($items as $delta => $item) {
   //     $elements[$delta] = [
@@ -36,24 +37,25 @@ class CtaBUttonDefaultFormatter extends FormatterBase {
   //     ];
   //   }
 
-  //   return $elements;
-  // }
-
-  public function viewElements(FieldItemListInterface $items, $langcode) {
-
-    if(substr( $item->cta_link, 0, 4 ) === "node" && is_numeric(substr($item->cta_link, -1, 1))) {
-      $path_alias = \Drupal::service('path.alias_manager')->getAliasByPath($item->cta_link, $langcode);
-      $cta_url = $path_alias;
-    }
-
+    // Use template
     $elements = array();
     foreach ($items as $delta => $item) {
+
+      if($path_alias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/' . $item->cta_link, $langcode)) {
+        $cta_url = $path_alias;
+      } else {
+        $cta_url = '/node/' . $item->cta_link;
+      }
+
       $elements[$delta] = [
         '#theme' => 'cta_button_formatter',
         '#cta_text' => $item->cta_text,
         '#cta_link' => $cta_url
       ];
     }
+
+    // var_dump(\Drupal::service('path.alias_manager')->getAliasByPath('/node/' . $item->cta_link));
+
 
     return $elements;
   }

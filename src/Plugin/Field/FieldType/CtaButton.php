@@ -22,7 +22,7 @@ use Drupal\Core\Field\FieldStorageDefinitionInterface as StorageDefinition;
 class CtaButton extends FieldItemBase {
 
   /**
-   * Field type properties definition.
+   * CTA Button Field type properties definition.
    *
    * Inside this method we define all the fields (properties) that our
    * custom field type will have.
@@ -45,7 +45,7 @@ class CtaButton extends FieldItemBase {
 
 
   /**
-   * Field type schema definition.
+   * CTA Button Field type schema definition.
    *
    * Inside this method we defines the database schema used to store data for
    * our field type.
@@ -73,10 +73,9 @@ class CtaButton extends FieldItemBase {
   }
 
   /**
-   * Define when the field is empty.
+   * Define when the CTA Button field is empty.
    *
-   * This method is important and used internally by Drupal. Take a moment
-   * to define when the field fype must be considered empty.
+   * This method is important and used internally by Drupal.
    */
 
   public function isEmpty() {
