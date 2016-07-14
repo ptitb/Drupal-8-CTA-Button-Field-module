@@ -1,0 +1,22 @@
+<?php
+
+use Drupal\Component\Utility\SafeMarkup;
+
+/**
+ * Implements hook_theme().
+ */
+function cta_button_theme($existing, $type, $theme, $path) {
+  return array(
+    'cta_button_formatter' => array(
+      // 'variables' => array('item' => NULL, 'item_attributes' => NULL, 'url' => NULL, 'image_style' => NULL),
+      'variables' => array('cta_text' => NULL, 'cta_link' => NULL),
+    ),
+  );
+}
+
+/**
+ * Implements template_preprocess_image_title_caption_formatter().
+ */
+// function template_preprocess_cta_button_formatter(&$vars) {
+
+// }
