@@ -42,9 +42,9 @@ class CtaBUttonDefaultFormatter extends FormatterBase {
     foreach ($items as $delta => $item) {
 
       if($path_alias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/' . $item->cta_link, $langcode)) {
-        $cta_url = $path_alias;
+        $cta_url = $GLOBALS['base_url'] . $path_alias;
       } else {
-        $cta_url = '/node/' . $item->cta_link;
+        $cta_url = $GLOBALS['base_url'] . '/node/' . $item->cta_link;
       }
 
       $elements[$delta] = [
