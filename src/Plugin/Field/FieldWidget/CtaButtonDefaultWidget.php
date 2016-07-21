@@ -40,7 +40,6 @@ class CtaButtonDefaultWidget extends WidgetBase {
   ) {
 
     // CTA Text
-
     $element['cta_text'] = [
       '#type' => 'textfield',
       '#title' => t('CTA Text'),
@@ -52,7 +51,6 @@ class CtaButtonDefaultWidget extends WidgetBase {
     ];
 
     // CTA Link
-    // $entity = node_load($items[$delta]->cta_link);
     $entity = entity_load('node', $items[$delta]->cta_link);
 
     $element['cta_link'] = [
@@ -64,12 +62,6 @@ class CtaButtonDefaultWidget extends WidgetBase {
       '#empty_value' => '',
       '#placeholder' => t('Call to action URL'),
     ];
-
-    print '<pre>';
-    // print_r($items[$delta]->cta_link);
-    // print_r(entity_load('node', 1));
-    // print_r($entity);
-    print '</pre>';
 
     return $element;
 

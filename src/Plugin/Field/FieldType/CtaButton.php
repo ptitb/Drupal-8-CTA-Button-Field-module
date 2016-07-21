@@ -10,7 +10,7 @@ use Drupal\Core\Field\FieldStorageDefinitionInterface as StorageDefinition;
  * Plugin implementation of the 'cta_button' field type.
  *
  * @FieldType(
- *   id = " CtaButton",
+ *   id = "CtaButton",
  *   label = @Translation("CTA Button"),
  *   description = @Translation("Stores an Call To Action Button"),
  *   category = @Translation("Custom"),
