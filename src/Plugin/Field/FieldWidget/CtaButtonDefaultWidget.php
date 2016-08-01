@@ -42,11 +42,11 @@ class CtaButtonDefaultWidget extends WidgetBase {
     // CTA Text
     $element['cta_text'] = [
       '#type' => 'textfield',
-      '#title' => t('CTA Text'),
+      '#title' => t('Link text'),
       '#default_value' => isset($items[$delta]->cta_text) ?
         $items[$delta]->cta_text : null,
       '#empty_value' => '',
-      '#placeholder' => t('Call to action text'),
+      // '#placeholder' => t('Link text'),
 
     ];
 
@@ -55,12 +55,12 @@ class CtaButtonDefaultWidget extends WidgetBase {
 
     $element['cta_link'] = [
       '#type' => 'entity_autocomplete',
-      '#title' => t('CTA Link'),
+      '#title' => t('Link to content'),
       '#target_type' => 'node',
       '#default_value' => isset($items[$delta]->cta_link) ?
         $entity : '',
       '#empty_value' => '',
-      '#placeholder' => t('Call to action URL'),
+      // '#placeholder' => t('Call to action URL'),
     ];
 
     return $element;
