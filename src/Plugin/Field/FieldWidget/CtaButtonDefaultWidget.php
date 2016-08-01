@@ -51,7 +51,9 @@ class CtaButtonDefaultWidget extends WidgetBase {
     ];
 
     // CTA Link
-    $entity = entity_load('node', $items[$delta]->cta_link);
+    if(isset($items[$delta]->cta_link)) {
+      $entity = entity_load('node', $items[$delta]->cta_link);
+    }
 
     $element['cta_link'] = [
       '#type' => 'entity_autocomplete',
