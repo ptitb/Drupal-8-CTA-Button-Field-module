@@ -18,7 +18,7 @@ use Drupal;
  * )
  */
 
-class CtaBUttonDefaultFormatter extends FormatterBase {
+class CtaButtonDefaultFormatter extends FormatterBase {
    /**
    * Define how the CTA Button field type is showed.
    *
